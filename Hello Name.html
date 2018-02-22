@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Name!</title>
+    <link href="Hello%20Name.css" rel="stylesheet">
+</head>
+<body>
+<label for="inputId"> What's your name?
+        <input type="text" id="inputId">
+</label>
+<button id="buttonId">Go!</button>
+<br>
+<p id="pId"> Hello </p>
+<br>
+
+<script>
+    var input = document.querySelector('#inputId');
+    var button = document.querySelector('#buttonId');
+    button.addEventListener('click', insertName);
+
+    function insertName() {
+        var p = document.querySelector('#pId');
+        p.innerHTML += input.value;
+    }
+</script>
+
+
+</body>
+</html>
