@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>converter - simple</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+    <label for="distance">miles (mi)
+        <input id="distance" type="number" class="form-control">
+    </label><br>
+    <button id="miTokm" class="btn btn-success">Convert</button>
+    <p id="kilometers"></p>
+
+
+    <br>
+    <hr>
+    <br>
+
+    <label for="mass"> pounds (lb)
+        <input id="mass" type="number" class="form-control">
+    </label><br>
+    <button id="lbTokg" class="btn btn-success">Convert</button>
+    <p id="kilograms"></p>
+
+<script>
+
+    var distance = document.querySelector('#distance');
+    var mass = document.querySelector('#mass');
+
+    document.querySelector('#miTokm').addEventListener('click', miTokm);
+    function miTokm() {
+        var metricDistance = distance.value * 1.6;
+        document.querySelector('#kilometers').innerHTML = metricDistance + '' + 'km';
+    }
+
+
+    document.querySelector('#lbTokg').addEventListener('click', lbTokg);
+    function lbTokg() {
+        var metricMass = mass.value / 2.2;
+        document.querySelector('#kilograms').innerHTML = metricMass + '' + 'kg';
+    }
+
+
+</script>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
