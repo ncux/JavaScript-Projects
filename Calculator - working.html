@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator - working</title>
+</head>
+<body>
+
+
+<label>Number 1:
+    <input type="number" id="num1" required>
+</label>
+<br>
+<label>Number 2:
+    <input type="number" id="num2" required>
+</label>
+<br>
+<div>
+    <p>Select operation:</p>
+    <button id="plus">+</button><button id="minus">-</button><button id="times">*</button><button id="divide">/</button>
+
+</div>
+<br>
+<p hidden id="prompt">Please enter a number!</p>
+<p id="result">Result: </p>
+
+<script>
+
+    var num1 = document.querySelector('#num1');
+    var num2 = document.querySelector('#num2');
+    var plus = document.querySelector('#plus');
+    var minus = document.querySelector('#minus');
+    var times = document.querySelector('#times');
+    var divide = document.querySelector('#divide');
+    var result = document.querySelector('#result');
+
+    plus.addEventListener('click', addition);
+    minus.addEventListener('click', substraction);
+    times.addEventListener('click', multiplication);
+    divide.addEventListener('click', division);
+
+    function addition() {
+    //    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+    //        document.querySelector('#prompt').removeAttribute('hidden');
+    //    } else {
+            result.innerHTML += Number(num1.value) + Number(num2.value);
+            num1.value = '';
+            num2.value = '';
+            return result;
+        }
+
+
+
+
+    function substraction() {
+        result.innerHTML += Number(num1.value) - Number(num2.value);
+        num1.value = '';
+        num2.value = '';
+        return result;
+    }
+
+    function multiplication() {
+        result.innerHTML += Number(num1.value) * Number(num2.value);
+        num1.value = '';
+        num2.value = '';
+        return result;
+    }
+
+    function division() {
+        result.innerHTML += Number(num1.value) / Number(num2.value);
+        num1.value = '';
+        num2.value = '';
+        return result;
+    }
+</script>
+
+</body>
+</html>
